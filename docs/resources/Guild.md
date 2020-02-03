@@ -185,10 +185,10 @@ A partial [guild](#DOCS_RESOURCES_GUILD/guild-object) object. Represents an Offl
 | Field          | Type                                            | Description                                                      |
 | -------------- | ----------------------------------------------- | ---------------------------------------------------------------- |
 | user           | [user](#DOCS_RESOURCES_USER/user-object) object | the user this guild member represents                            |
-| nick           | ?string                                         | this users guild nickname (if one is set)                        |
+| nick           | ?string                                         | this users guild nickname                                        |
 | roles          | array of snowflakes                             | array of [role](#DOCS_TOPICS_PERMISSIONS/role-object) object ids |
 | joined_at      | ISO8601 timestamp                               | when the user joined the guild                                   |
-| premium_since? | ?ISO8601 timestamp                              | when the user used their Nitro boost on the server               |
+| premium_since?| ?ISO8601 timestamp                              | when the user used their Nitro boost on the server              |
 | deaf           | boolean                                         | whether the user is deafened in voice channels                   |
 | mute           | boolean                                         | whether the user is muted in voice channels                      |
 
@@ -593,15 +593,15 @@ Attach an [integration](#DOCS_RESOURCES_GUILD/integration-object) object from th
 Modify the behavior and settings of an [integration](#DOCS_RESOURCES_GUILD/integration-object) object for the guild. Requires the `MANAGE_GUILD` permission. Returns a 204 empty response on success. Fires a [Guild Integrations Update](#DOCS_TOPICS_GATEWAY/guild-integrations-update) Gateway event.
 
 > info
-> All parameters for this endpoint are optional.
+> All parameters for this endpoint are optional and nullable.
 
 ###### JSON Params
 
 | Field               | Type     | Description                                                                                                                                 |
 | ------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| expire_behavior     | integer  | the behavior when an integration subscription lapses (see the [integration](#DOCS_RESOURCES_GUILD/integration-object) object documentation) |
-| expire_grace_period | integer  | period (in seconds) where the integration will ignore lapsed subscriptions                                                                  |
-| enable_emoticons    | ?boolean | whether emoticons should be synced for this integration (twitch only currently)                                                             |
+| expire_behavior     | integer | the behavior when an integration subscription lapses (see the [integration](#DOCS_RESOURCES_GUILD/integration-object) object documentation) |
+| expire_grace_period | integer | period (in seconds) where the integration will ignore lapsed subscriptions                                                                  |
+| enable_emoticons    | boolean | whether emoticons should be synced for this integration (twitch only currently)                                                             |
 
 ## Delete Guild Integration % DELETE /guilds/{guild.id#DOCS_RESOURCES_GUILD/guild-object}/integrations/{integration.id#DOCS_RESOURCES_GUILD/integration-object}
 
