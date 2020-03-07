@@ -522,7 +522,7 @@ The allowed mention field allows for more granular control over mentions without
 
 Due to the complexity of possibilities, we have included a set of examples and behavior for the allowed mentions field.
 
-If `allowed_mentions` is _not_ passed in (i.e. the key does not exist), the mentions will be parsed via the content. This corresponds with existing behavior.
+If `allowed_mentions` is empty or _not_ passed in (i.e. the key does not exist or the value is set to null), the mentions will be parsed via the content. This corresponds with existing behavior.
 
 In the example below we would ping @here (and also @role124 and @user123)
 
