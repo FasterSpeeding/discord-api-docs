@@ -129,7 +129,6 @@ Having the user's access token allows your application to make certain requests 
 - `client_secret` - your application's client secret
 - `grant_type` - must be set to `refresh_token`
 - `refresh_token` - the user's refresh token
-- `redirect_uri` - your `redirect_uri`
 - `scope` - one or more scopes requested in your authorization url, space-delimited (optional, will be treated as equal to all granted scopes if empty or omitted)
 
 ###### Refresh Token Exchange Example
@@ -138,7 +137,6 @@ Having the user's access token allows your application to make certain requests 
 API_ENDPOINT = 'https://discord.com/api/v8'
 CLIENT_ID = '332269999912132097'
 CLIENT_SECRET = '937it3ow87i4ery69876wqire'
-REDIRECT_URI = 'https://nicememe.website'
 
 def refresh_token(refresh_token):
   data = {
@@ -146,7 +144,6 @@ def refresh_token(refresh_token):
     'client_secret': CLIENT_SECRET,
     'grant_type': 'refresh_token',
     'refresh_token': refresh_token,
-    'redirect_uri': REDIRECT_URI,
     'scope': 'identify email connections'
   }
   headers = {
